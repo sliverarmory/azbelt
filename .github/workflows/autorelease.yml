@@ -15,6 +15,7 @@ jobs:
         uses: devcontainers/ci@v0.2
         with:
           runCmd: |
+            sudo apt-get update --fix-missing && sudo apt-get -y install mingw-w64 binutils-mingw-w64 g++-mingw-w64
             nimble -y release
             mkdir -p build
             cp extension.json build/
